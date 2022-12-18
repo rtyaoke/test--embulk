@@ -1,0 +1,5 @@
++all_table:
+  for_each>:
+    config: [embulk/users.yml, embulk/sales.yml]
+  _do:
+    embulk>: ${config}

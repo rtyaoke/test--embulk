@@ -1,0 +1,28 @@
+# config.yml.liquid
+
+# {% include 'in' %}
+
+in:
+  type: sqlserver
+  host: localhost
+  port: 14330
+  user: sa
+  password: Passw0rd
+  database: MyTuningDB_bk
+  # query: SELECT TOP(1000) * FROM [Member]
+  query: {% include 'query/query1' %}
+out:
+  type: postgresql
+  host: localhost
+  port: 5433
+  user: postgres
+  password: kGtgHh8cXg%p8!YuZ^VT3[p5
+  database: hogedb
+  schema: hogeschema
+  table: from_embulk
+  mode: truncate_insert
+  # column_options:
+  #   my_col_1: {type: 'BIGSERIAL'}
+  #   my_col_3: {type: 'INT NOT NULL'}
+  #   my_col_4: {value_type: string, timestamp_format: `%Y-%m-%d %H:%M:%S %z`, timezone: '-0700'}
+  #   my_col_5: {type: 'DECIMAL(18,9)', value_type: pass}
